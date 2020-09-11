@@ -1,5 +1,5 @@
 
-MACRO-STEP 1
+# MACRO-STEP 1
 * set up the collections 
 	* put into the directories ./experiment/runs/T03 and ./experiment/runs/T08 the runs from the two collections as separate files.
 	* put into the directories ./experiment/pool/T03 and ./experiment/runs/T08 the qrels from the two collections. the expected names for the qrels are in ./code/shared_files/tracks.m: change them in case it is necessary.
@@ -42,8 +42,8 @@ MACRO-STEP 1
 	```
 
 
-MACRO-STEP 2
-*compute bootstrap ANOVA
+# MACRO-STEP 2
+* compute bootstrap ANOVA
 	* run
 	```
 	# --------------- TRADITIONAL ANOVA --------------- #
@@ -81,9 +81,9 @@ MACRO-STEP 2
 
 Extend the Voohrees work, by adding the model md6
 
-MACRO-STEP 4:
-*compute anlyses:
-	* table 1
+# MACRO-STEP 3:
+* compute anlyses:
+ 	* table 1
 	* table 2
 	* table 3-4: 
 
