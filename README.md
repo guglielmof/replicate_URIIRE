@@ -100,25 +100,50 @@ Folder structure
 		|
 		|
 		-> TO3
+			|
+			|
+			-> TIP12_RNDE_02
+			-> TIP12_RNDE_03
+			-> TIP12_RNDE_05
 	-> pool
 		|
 		|
-		-> TO3	
+		-> TO3
+			|
+			|
+			-> TIP12_RNDE_02
+			-> TIP12_RNDE_03
+			-> TIP12_RNDE_05
 	-> analysis
 		|
 		|
 		-> TO3
+			|
+			|
+			-> TIP12_RNDE_02
+			-> TIP12_RNDE_03
+			-> TIP12_RNDE_05
 	-> dataset
 		|
 		|
 		-> TO3
+			|
+			|
+			-> TIP12_RNDE_02
+			-> TIP12_RNDE_03
+			-> TIP12_RNDE_05
 	-> measure
 		|
 		|
 		-> TO3
+			|
+			|
+			-> TIP12_RNDE_02
+			-> TIP12_RNDE_03
+			-> TIP12_RNDE_05
 	-> shard
 	-> corpus
 		|
 		|
 		-> TIP12.txt: list of tipster disks 1-2 document ids (one for each line)
-	```
+```
