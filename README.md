@@ -6,7 +6,7 @@ MACRO-STEP 1
 * import shard the runs and import them
 	* run
 	
-	'''
+	```
 	# ------------------ IMPORT COLLECTIONS ------------------ #
 	matlab nodesktop -nodisplay -r "import_collection('T03')"
 	
@@ -29,7 +29,7 @@ MACRO-STEP 1
 	matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_02');quit;"
 	matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_03');quit;"
 	matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_05');quit;"
-	'''
+	```
 		
 	* compute measures (AP, P@10)
 		* run
