@@ -134,15 +134,15 @@ The code has been tested and works with matlab version 2017b.
 		```
 		matlab nodesktop -nodisplay -r "replicate_URIIRE();quit;"
 		```
-		- outputs: table 1 - Mean, Shortest, and Longest Lengths of 95% Confidence Intervals on the System Effect for TREC-3 Runs
-				   table 2 - Number of Significantly Different Run Pairs Found for TREC-3, last column (partition)
-				   table 3 - Mean [Minimum, Maximum] Lengths of 95% Confidence Intervals on the System Effect for Different Number of Partitions for Different TREC Datasets and Evaluation Measures. 
+		* outputs: 
+		        * table 1 - Mean [Minimum, Maximum] Lengths of 95% Confidence Intervals on the System Effect for Different Number of Partitions
+			* table 2 - Mean, Shortest, and Longest Lengths of Intervals on the System Effect for TREC-3 Runs and Number of Significantly Different Run Pairs Found for TREC-3
 
 
 
 Extend the Voohrees work, by adding the model md6
 
-# MACRO-STEP 3:
+# MACRO-STEP 3
 * compute anlyses:
  	* table 1
 	* table 2
