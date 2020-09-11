@@ -129,14 +129,14 @@ The code has been tested and works with matlab version 2017b.
 	matlab nodesktop -nodisplay -r "compute_bootstrap_effects('md3', 'T03', 'TIP12_RNDE_05', 'zero', 3, 'q4', 2500, 1, 2, 1, 5, 24);quit;"
 	```
 	* outputs: system effects bootstrap sample matrix
-	* replicate "Using Replicates in Information Retrieval Evaluation"
-		* run
-		```
-		matlab nodesktop -nodisplay -r "replicate_URIIRE();quit;"
-		```
-		* outputs: 
-		        * table 1 - Mean [Minimum, Maximum] Lengths of 95% Confidence Intervals on the System Effect for Different Number of Partitions
-			* table 2 - Mean, Shortest, and Longest Lengths of Intervals on the System Effect for TREC-3 Runs and Number of Significantly Different Run Pairs Found for TREC-3
+* replicate "Using Replicates in Information Retrieval Evaluation"
+	* run
+	```
+	matlab nodesktop -nodisplay -r "replicate_URIIRE();quit;"
+	```
+	* outputs
+		* table 1 - Mean [Minimum, Maximum] Lengths of 95% Confidence Intervals on the System Effect for Different Number of Partitions
+		* table 2 - Mean, Shortest, and Longest Lengths of Intervals on the System Effect for TREC-3 Runs and Number of Significantly Different Run Pairs Found for TREC-3
 
 
 
