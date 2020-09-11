@@ -96,7 +96,7 @@ The code has been tested and works with matlab version 2017b.
 	* run
 	```
 	# to compute measures bisides AP and P@10, it is necessary to changes the last 2 parameters, according to the
-	# list in measures
+	# list in ./code/shared_files/measures
 	matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_02', 1, 2);quit;"
 	matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_03', 1, 2);quit;"
 	matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_05', 1, 2);quit;"
