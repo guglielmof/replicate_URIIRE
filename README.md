@@ -18,25 +18,23 @@ MACRO-STEP 1
 		matlab nodesktop -nodisplay -r "random_split_corpus('TIP12_RNDE_05'); quit;")
 
 
-			# --------------- SPLIT RUNS --------------- #
-			matlab nodesktop -nodisplay -r "split_runs('T03', 'TIP12_RNDE_02');quit;"
-			matlab nodesktop -nodisplay -r "split_runs('T03', 'TIP12_RNDE_03');quit;"
-			matlab nodesktop -nodisplay -r "split_runs('T03', 'TIP12_RNDE_05');quit;"
+		# --------------- SPLIT RUNS --------------- #
+		matlab nodesktop -nodisplay -r "split_runs('T03', 'TIP12_RNDE_02');quit;"
+		matlab nodesktop -nodisplay -r "split_runs('T03', 'TIP12_RNDE_03');quit;"
+		matlab nodesktop -nodisplay -r "split_runs('T03', 'TIP12_RNDE_05');quit;"
 
-			# --------------- SPLIT POOL --------------- #
-			matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_02');quit;"
-			matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_03');quit;"
-			matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_05');quit;"
+		# --------------- SPLIT POOL --------------- #
+		matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_02');quit;"
+		matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_03');quit;"
+		matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_05');quit;"
       
-	- compute measures (AP, P@10):
-		- run:
-
-			# to compute measures bisides AP and P@10, it is necessary to changes the last 2 parameters, according to the
-			# list in measures
-
-			matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_02', 1, 2);quit;"
-			matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_03', 1, 2);quit;"
-			matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_05', 1, 2);quit;"
+	* compute measures (AP, P@10)
+		* run
+		# to compute measures bisides AP and P@10, it is necessary to changes the last 2 parameters, according to the
+		# list in measures
+		matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_02', 1, 2);quit;"
+		matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_03', 1, 2);quit;"
+		matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_05', 1, 2);quit;"
 
 
 
