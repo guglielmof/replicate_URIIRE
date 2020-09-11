@@ -1,3 +1,5 @@
+The code has been tested and works with matlab version 2017b.
+
 # MACRO-STEP 0
 * replicate the following folder structure
 ```
