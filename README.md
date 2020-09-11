@@ -1,19 +1,14 @@
 
 MACRO-STEP 1:
-
 	* set up the collections 
 		* put into the directories ./experiment/runs/T03 and ./experiment/runs/T08 the runs from the two collections as separate files.
 		* put into the directories ./experiment/pool/T03 and ./experiment/runs/T08 the qrels from the two collections. the expected names for the qrels are in ./code/shared_files/tracks.m: change them in case it is necessary.
 	* import shard the runs and import them
-
 		* run:
 			# ------------------ IMPORT COLLECTIONS ------------------ #
 			code(matlab nodesktop -nodisplay -r "import_collection('T03')")
-
-
-
 			# --------------- SPLIT CORPUS INTO SHARDS --------------- #
-
+			code(
 			# note that, in case you want to create a different splitting (e.g. with more shards, or a different)
 			# corpus, it is necessary to have a directory with the same name in ./experiment/shard
 			# and to have the code and description of the sharding into the ./code/common_parameters.m file
@@ -22,7 +17,7 @@ MACRO-STEP 1:
 
 			matlab nodesktop -nodisplay -r "random_split_corpus('TIP12_RNDE_02'); quit;"
 			matlab nodesktop -nodisplay -r "random_split_corpus('TIP12_RNDE_03'); quit;"
-			matlab nodesktop -nodisplay -r "random_split_corpus('TIP12_RNDE_05'); quit;"
+			matlab nodesktop -nodisplay -r "random_split_corpus('TIP12_RNDE_05'); quit;")
 
 
 			# --------------- SPLIT RUNS --------------- #
