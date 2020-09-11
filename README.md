@@ -1,3 +1,62 @@
+# MACRO-STEP 0
+* replicate the following folder structure
+```
+-> matters
+-> code
+-> experiments
+	|
+	|
+	-> runs
+		|
+		|
+		-> TO3
+			|
+			|
+			-> TIP12_RNDE_02
+			-> TIP12_RNDE_03
+			-> TIP12_RNDE_05
+	-> pool
+		|
+		|
+		-> TO3
+			|
+			|
+			-> TIP12_RNDE_02
+			-> TIP12_RNDE_03
+			-> TIP12_RNDE_05
+	-> analysis
+		|
+		|
+		-> TO3
+			|
+			|
+			-> TIP12_RNDE_02
+			-> TIP12_RNDE_03
+			-> TIP12_RNDE_05
+	-> dataset
+		|
+		|
+		-> TO3
+			|
+			|
+			-> TIP12_RNDE_02
+			-> TIP12_RNDE_03
+			-> TIP12_RNDE_05
+	-> measure
+		|
+		|
+		-> TO3
+			|
+			|
+			-> TIP12_RNDE_02
+			-> TIP12_RNDE_03
+			-> TIP12_RNDE_05
+	-> shard
+	-> corpus
+		|
+		|
+		-> TIP12.txt: list of tipster disks 1-2 document ids (one for each line)
+```
 
 # MACRO-STEP 1
 * set up the collections 
@@ -86,64 +145,3 @@ Extend the Voohrees work, by adding the model md6
  	* table 1
 	* table 2
 	* table 3-4: 
-
-
-
-Folder structure
-```
--> matters
--> code
--> experiments
-	|
-	|
-	-> runs
-		|
-		|
-		-> TO3
-			|
-			|
-			-> TIP12_RNDE_02
-			-> TIP12_RNDE_03
-			-> TIP12_RNDE_05
-	-> pool
-		|
-		|
-		-> TO3
-			|
-			|
-			-> TIP12_RNDE_02
-			-> TIP12_RNDE_03
-			-> TIP12_RNDE_05
-	-> analysis
-		|
-		|
-		-> TO3
-			|
-			|
-			-> TIP12_RNDE_02
-			-> TIP12_RNDE_03
-			-> TIP12_RNDE_05
-	-> dataset
-		|
-		|
-		-> TO3
-			|
-			|
-			-> TIP12_RNDE_02
-			-> TIP12_RNDE_03
-			-> TIP12_RNDE_05
-	-> measure
-		|
-		|
-		-> TO3
-			|
-			|
-			-> TIP12_RNDE_02
-			-> TIP12_RNDE_03
-			-> TIP12_RNDE_05
-	-> shard
-	-> corpus
-		|
-		|
-		-> TIP12.txt: list of tipster disks 1-2 document ids (one for each line)
-```
