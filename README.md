@@ -1,15 +1,15 @@
 
 MACRO-STEP 1:
 
-	- set up the collections 
-		- put into the directories ./experiment/runs/T03 and ./experiment/runs/T08 the runs from the two collections as separate files.
-		- put into the directories ./experiment/pool/T03 and ./experiment/runs/T08 the qrels from the two collections. 
+	* set up the collections 
+		* put into the directories ./experiment/runs/T03 and ./experiment/runs/T08 the runs from the two collections as separate files.
+		* put into the directories ./experiment/pool/T03 and ./experiment/runs/T08 the qrels from the two collections. 
 			the expected names for the qrels are in ./code/shared_files/tracks.m: change them in case it is necessary.
 
 
-	- import shard the runs and import them
+	* import shard the runs and import them
 
-		- run:
+		* run:
 			# ------------------ IMPORT COLLECTIONS ------------------ #
 			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "import_collection('T03')"
 
@@ -23,20 +23,20 @@ MACRO-STEP 1:
 			# this is also true for splitting runs, pools and computing measures
 
 
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "random_split_corpus('TIP12_RNDE_02'); quit;"
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "random_split_corpus('TIP12_RNDE_03'); quit;"
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "random_split_corpus('TIP12_RNDE_05'); quit;"
+			matlab nodesktop -nodisplay -r "random_split_corpus('TIP12_RNDE_02'); quit;"
+			matlab nodesktop -nodisplay -r "random_split_corpus('TIP12_RNDE_03'); quit;"
+			matlab nodesktop -nodisplay -r "random_split_corpus('TIP12_RNDE_05'); quit;"
 
 
 			# --------------- SPLIT RUNS --------------- #
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "split_runs('T03', 'TIP12_RNDE_02');quit;"
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "split_runs('T03', 'TIP12_RNDE_03');quit;"
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "split_runs('T03', 'TIP12_RNDE_05');quit;"
+			matlab nodesktop -nodisplay -r "split_runs('T03', 'TIP12_RNDE_02');quit;"
+			matlab nodesktop -nodisplay -r "split_runs('T03', 'TIP12_RNDE_03');quit;"
+			matlab nodesktop -nodisplay -r "split_runs('T03', 'TIP12_RNDE_05');quit;"
 
 			# --------------- SPLIT POOL --------------- #
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_02');quit;"
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_03');quit;"
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_05');quit;"
+			matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_02');quit;"
+			matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_03');quit;"
+			matlab nodesktop -nodisplay -r "split_pool('T03', 'TIP12_RNDE_05');quit;"
       
 	- compute measures (AP, P@10):
 		- run:
@@ -44,9 +44,9 @@ MACRO-STEP 1:
 			# to compute measures bisides AP and P@10, it is necessary to changes the last 2 parameters, according to the
 			# list in measures
 
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_02', 1, 2);quit;"
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_03', 1, 2);quit;"
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_05', 1, 2);quit;"
+			matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_02', 1, 2);quit;"
+			matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_03', 1, 2);quit;"
+			matlab nodesktop -nodisplay -r "compute_measures_shards('T03', 'TIP12_RNDE_05', 1, 2);quit;"
 
 
 
@@ -56,25 +56,25 @@ MACRO-STEP 2:
 		- run:
 
 			# --------------- TRADITIONAL ANOVA --------------- #
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_md2to6_analysis('md2', 'T03', 'TIP12_RNDE_02', 'zero', 3, 'q4', 1, 2, 1, 5, 24);quit;"
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_md2to6_analysis('md3', 'T03', 'TIP12_RNDE_02', 'zero', 3, 'q4', 1, 2, 1, 5, 24);quit;"
+			matlab nodesktop -nodisplay -r "compute_md2to6_analysis('md2', 'T03', 'TIP12_RNDE_02', 'zero', 3, 'q4', 1, 2, 1, 5, 24);quit;"
+			matlab nodesktop -nodisplay -r "compute_md2to6_analysis('md3', 'T03', 'TIP12_RNDE_02', 'zero', 3, 'q4', 1, 2, 1, 5, 24);quit;"
 
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_md2to6_analysis('md2', 'T03', 'TIP12_RNDE_03', 'zero', 3, 'q4', 1, 2, 1, 5, 24);quit;"
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_md2to6_analysis('md3', 'T03', 'TIP12_RNDE_03', 'zero', 3, 'q4', 1, 2, 1, 5, 24);quit;"
+			matlab nodesktop -nodisplay -r "compute_md2to6_analysis('md2', 'T03', 'TIP12_RNDE_03', 'zero', 3, 'q4', 1, 2, 1, 5, 24);quit;"
+			matlab nodesktop -nodisplay -r "compute_md2to6_analysis('md3', 'T03', 'TIP12_RNDE_03', 'zero', 3, 'q4', 1, 2, 1, 5, 24);quit;"
 
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_md2to6_analysis('md2', 'T03', 'TIP12_RNDE_05', 'zero', 3, 'q4', 1, 2, 1, 5, 24);quit;"
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_md2to6_analysis('md3', 'T03', 'TIP12_RNDE_05', 'zero', 3, 'q4', 1, 2, 1, 5, 24);quit;"
+			matlab nodesktop -nodisplay -r "compute_md2to6_analysis('md2', 'T03', 'TIP12_RNDE_05', 'zero', 3, 'q4', 1, 2, 1, 5, 24);quit;"
+			matlab nodesktop -nodisplay -r "compute_md2to6_analysis('md3', 'T03', 'TIP12_RNDE_05', 'zero', 3, 'q4', 1, 2, 1, 5, 24);quit;"
 
 			# --------------- BOOTSTRAP ANOVA --------------- #
 
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_bootstrap_effects('md2', 'T03', 'TIP12_RNDE_02', 'zero', 3, 'q4', 2500, 1, 2, 1, 5, 24);quit;"
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_bootstrap_effects('md3', 'T03', 'TIP12_RNDE_02', 'zero', 3, 'q4', 2500, 1, 2, 1, 5, 24);quit;"
+			matlab nodesktop -nodisplay -r "compute_bootstrap_effects('md2', 'T03', 'TIP12_RNDE_02', 'zero', 3, 'q4', 2500, 1, 2, 1, 5, 24);quit;"
+			matlab nodesktop -nodisplay -r "compute_bootstrap_effects('md3', 'T03', 'TIP12_RNDE_02', 'zero', 3, 'q4', 2500, 1, 2, 1, 5, 24);quit;"
 
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_bootstrap_effects('md2', 'T03', 'TIP12_RNDE_03', 'zero', 3, 'q4', 2500, 1, 2, 1, 5, 24);quit;"
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_bootstrap_effects('md3', 'T03', 'TIP12_RNDE_03', 'zero', 3, 'q4', 2500, 1, 2, 1, 5, 24);quit;"
+			matlab nodesktop -nodisplay -r "compute_bootstrap_effects('md2', 'T03', 'TIP12_RNDE_03', 'zero', 3, 'q4', 2500, 1, 2, 1, 5, 24);quit;"
+			matlab nodesktop -nodisplay -r "compute_bootstrap_effects('md3', 'T03', 'TIP12_RNDE_03', 'zero', 3, 'q4', 2500, 1, 2, 1, 5, 24);quit;"
 
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_bootstrap_effects('md2', 'T03', 'TIP12_RNDE_05', 'zero', 3, 'q4', 2500, 1, 2, 1, 5, 24);quit;"
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "compute_bootstrap_effects('md3', 'T03', 'TIP12_RNDE_05', 'zero', 3, 'q4', 2500, 1, 2, 1, 5, 24);quit;"
+			matlab nodesktop -nodisplay -r "compute_bootstrap_effects('md2', 'T03', 'TIP12_RNDE_05', 'zero', 3, 'q4', 2500, 1, 2, 1, 5, 24);quit;"
+			matlab nodesktop -nodisplay -r "compute_bootstrap_effects('md3', 'T03', 'TIP12_RNDE_05', 'zero', 3, 'q4', 2500, 1, 2, 1, 5, 24);quit;"
 
 			- outputs: system effects bootstrap sample matrix
 
@@ -83,7 +83,7 @@ MACRO-STEP 2:
 	- replicate "Using Replicates in Information Retrieval Evaluation":
 		- run:
 
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "replicate_URIIRE();quit;"
+			matlab nodesktop -nodisplay -r "replicate_URIIRE();quit;"
 
 			- outputs: table 1 - Mean, Shortest, and Longest Lengths of 95% Confidence Intervals on the System Effect for TREC-3 Runs
 					   table 2 - Number of Significantly Different Run Pairs Found for TREC-3, last column (partition)
@@ -118,30 +118,30 @@ Folder structure
 	-> matters
 	-> code
 	-> experiments
+		|
+		|
+		-> runs
 			|
 			|
-			-> runs
-				|
-				|
-				-> TO3
-			-> pool
-				|
-				|
-				-> TO3	
-			-> analysis
-				|
-				|
-				-> TO3
-			-> dataset
-				|
-				|
-				-> TO3
-			-> measure
-				|
-				|
-				-> TO3
-			-> shard
-			-> corpus
-				|
-				|
-				-> TIP12.txt: list of tipster disks 1-2 document ids (one for each line)
+			-> TO3
+		-> pool
+			|
+			|
+			-> TO3	
+		-> analysis
+			|
+			|
+			-> TO3
+		-> dataset
+			|
+			|
+			-> TO3
+		-> measure
+			|
+			|
+			-> TO3
+		-> shard
+		-> corpus
+			|
+			|
+			-> TIP12.txt: list of tipster disks 1-2 document ids (one for each line)
