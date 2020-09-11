@@ -3,15 +3,12 @@ MACRO-STEP 1:
 
 	* set up the collections 
 		* put into the directories ./experiment/runs/T03 and ./experiment/runs/T08 the runs from the two collections as separate files.
-		* put into the directories ./experiment/pool/T03 and ./experiment/runs/T08 the qrels from the two collections. 
-			the expected names for the qrels are in ./code/shared_files/tracks.m: change them in case it is necessary.
-
-
+		* put into the directories ./experiment/pool/T03 and ./experiment/runs/T08 the qrels from the two collections. the expected names for the qrels are in ./code/shared_files/tracks.m: change them in case it is necessary.
 	* import shard the runs and import them
 
 		* run:
 			# ------------------ IMPORT COLLECTIONS ------------------ #
-			/nfsd/opt/matlab2017b/bin/matlab nodesktop -nodisplay -r "import_collection('T03')"
+			code(matlab nodesktop -nodisplay -r "import_collection('T03')")
 
 
 
