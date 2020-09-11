@@ -140,9 +140,9 @@ The code has been tested and works with matlab version 2017b.
 
 
 
-Extend the Voohrees work, by adding the model md6
 
 # MACRO-STEP 3
+Extend the analyses on the original work, by adding the model md6
 * compute anlyses:
  	* table 1
 	* table 2
