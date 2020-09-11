@@ -82,16 +82,6 @@ MACRO-STEP 2:
 
 Extend the Voohrees work, by adding new models
 
-
-MACRO-STEP 3:
-	- compute baselines: 
-		- compute traditional ANOVA + HSD
-			- outputs: pvalue matrix
-
-		- compute traditional ANOVA + BH
-			???
-			- outputs: pvalue matrix
-
 MACRO-STEP 4:
 
 	- compute anlyses:
