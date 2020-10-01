@@ -163,6 +163,9 @@ Extend the analyses on the original work, by adding the model md6
 	matlab nodesktop -nodisplay -r "analysis_across_approaches('T08', 'TIP_RNDE_05', 'zero', 3, 'q4', 'bi', 1, 1, 1, 5); quit"
 	```
 	* table 2
+	```
+	matlab nodesktop -nodisplay -r "analysis_across_shards('T08', 'TIP_RNDE_05', 'zero', 3, 'q4', 'bi', 1, 1, 1, 5); quit"
+	```
 	* table 3-4: 
 
 
