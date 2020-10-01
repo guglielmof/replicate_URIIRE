@@ -140,7 +140,7 @@ The code has been tested and works with matlab version 2017b.
 	```
 	matlab nodesktop -nodisplay -r "replicate_URIIRE();quit;"
 	
-	# if you intend to replicate instead of reproducing use
+	# if you intend to reproduce (shards without relevants and bidirectional system of hypotheses)  use
 	matlab nodesktop -nodisplay -r "replicate_URIIRE(1, 5, true);quit;"
 	```
 	* outputs
