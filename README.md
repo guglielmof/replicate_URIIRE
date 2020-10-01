@@ -87,7 +87,8 @@ The code has been tested and works with matlab version 2017b.
 	# for all the possible number of shards. Substitute 'TIP12_RNDE_<number of shards>' with 
 	# 'TIP12_NEMP_<number of shards>' in all the following instructions; 
 	# to sample shards with at least one relevant document for each topic. Additionally, add
-	# the directories named 'TIP12_NEMP_<number of shards>' in all the directories
+	# the directories named 'TIP12_NEMP_<number of shards>' in all the directories. Use the
+	# same sharding code in all the following instructions
 		
 	# --------------- SPLIT RUNS --------------- #
 	matlab nodesktop -nodisplay -r "split_runs('T03', 'TIP12_RNDE_02');quit;"
