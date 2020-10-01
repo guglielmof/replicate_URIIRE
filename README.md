@@ -81,7 +81,7 @@ The code has been tested and works with matlab version 2017b.
 	matlab nodesktop -nodisplay -r "random_split_corpus('TIP12_RNDE_03'); quit;"
 	matlab nodesktop -nodisplay -r "random_split_corpus('TIP12_RNDE_05'); quit;"
 	
-	# If you intend to replicate the results found in ... use the following instruction:
+	# If you intend to replicate the results found in [1] use the following instruction:
 	matlab nodesktop -nodisplay -r "noempy_split_corpus('TIP12_NEMP_02', 'T03'); quit;"
 	# for all the possible number of shards. Substitute 'TIP12_RNDE_<number of shards>' with 
 	# 'TIP12_NEMP_<number of shards>' in all the following instructions; Additionally, add
@@ -156,3 +156,7 @@ Extend the analyses on the original work, by adding the model md6
  	* table 1
 	* table 2
 	* table 3-4: 
+
+
+
+[1] E.  M.  Voorhees,  D.  Samarov,  and  I.  Soboroff.  2017.   Using  Replicates  inInformation  Retrieval  Evaluation.ACM TOIS36,  2  (September  2017),12:1–12:21.
