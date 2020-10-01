@@ -138,10 +138,12 @@ The code has been tested and works with matlab version 2017b.
 * reproduce "Using Replicates in Information Retrieval Evaluation"
 	* run
 	```
-	matlab nodesktop -nodisplay -r "replicate_URIIRE();quit;"
+	matlab nodesktop -nodisplay -r "replicate_URIIRE(1, 5, true);quit;"
+	
 	
 	# if you intend to reproduce (shards without relevants and bidirectional system of hypotheses)  use
-	matlab nodesktop -nodisplay -r "replicate_URIIRE(1, 5, true);quit;"
+	matlab nodesktop -nodisplay -r "replicate_URIIRE();quit;"
+	
 	```
 	* outputs
 		* table 1 - Mean [Minimum, Maximum] Lengths of 95% Confidence Intervals on the System Effect for Different Number of Partitions
