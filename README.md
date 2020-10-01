@@ -82,9 +82,11 @@ The code has been tested and works with matlab version 2017b.
 	matlab nodesktop -nodisplay -r "random_split_corpus('TIP12_RNDE_05'); quit;"
 	
 	# If you intend to replicate the results found in [1] use the following instruction:
-	matlab nodesktop -nodisplay -r "noempy_split_corpus('TIP12_NEMP_02', 'T03'); quit;"
+	matlab nodesktop -nodisplay -r "noempy_split_corpus('TIP12_NEMP_02', 'T03'); quit;" 
+	
 	# for all the possible number of shards. Substitute 'TIP12_RNDE_<number of shards>' with 
-	# 'TIP12_NEMP_<number of shards>' in all the following instructions; Additionally, add
+	# 'TIP12_NEMP_<number of shards>' in all the following instructions; 
+	# to sample shards with at least one relevant document for each topic. Additionally, add
 	# the directories named 'TIP12_NEMP_<number of shards>' in all the directories
 		
 	# --------------- SPLIT RUNS --------------- #
