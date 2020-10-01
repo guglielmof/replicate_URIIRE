@@ -159,6 +159,9 @@ The code has been tested and works with matlab version 2017b.
 Extend the analyses on the original work, by adding the model md6
 * compute anlyses:
  	* table 1
+	```
+	matlab nodesktop -nodisplay -r "analysis_across_approaches('T08', 'TIP_RNDE_05', 'zero', 3, 'q4', 'bi', 1, 1, 1, 5); quit"
+	```
 	* table 2
 	* table 3-4: 
 
