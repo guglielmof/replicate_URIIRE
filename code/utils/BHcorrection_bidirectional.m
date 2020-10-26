@@ -17,8 +17,13 @@ function [p_val_matrix, ssdcouples, cutoff, lim] = BHcorrection_bidirectional(so
                 left_most  = j;
                 right_most = i;
             end
-            left_side  = normcdf(meansS(left_most), meansS(right_most), stdsS(right_most));
-            right_side = 1-normcdf(meansS(right_most), meansS(left_most), stdsS(left_most));
+            
+            pd  = fitdist(bootstrapTable{:, sortedSystems{right_most}},'kernel','Kernel','normal');
+            left_side = cdf(pd, meansS(left_most));
+            
+            pd  = fitdist(bootstrapTable{:, sortedSystems{left_most}},'kernel','Kernel','normal');
+            right_side = 1-cdf(pd, meansS(right_most));
+            
             computed_pvals = left_side + right_side;
             pvals = [pvals, computed_pvals];
             p_val_matrix{sortedSystems{i}, sortedSystems{j}} = computed_pvals;
@@ -26,9 +31,9 @@ function [p_val_matrix, ssdcouples, cutoff, lim] = BHcorrection_bidirectional(so
         end
     end
     pvals_sorted = sort(pvals);
-    k = [1:N]/N*alpha;
+    k = (1:N).*alpha/N;
     lim = find(pvals_sorted>k);
     lim = lim(1) - 1;
-    cutoff = cast(M*(alpha/2)*lim/(2*N), 'int32');
+    cutoff = cast(M*(alpha)*lim/(2*N), 'int32');
     ssdcouples = lim;
 end

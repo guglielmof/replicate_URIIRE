@@ -175,8 +175,14 @@ function [] = compute_measures_shards(trackID, splitID, startMeasure, endMeasure
                     'WorkspaceVarNames', {'measure'}, ...
                     'FileVarNames', {measureID});
                 
-                clear measure;
                 
+                
+                if contains(splitID, 'NEMP') && (any(any(isnan(measure{:,:}))))
+                    fprintf('WARNING: NaN founds');
+                end
+                
+                clear measure;
+
                 fprintf('elapsed time: %s\n', elapsedToHourMinutesSeconds(toc(start)));
                 
             end % for measure

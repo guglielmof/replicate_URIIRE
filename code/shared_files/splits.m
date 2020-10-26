@@ -7,7 +7,8 @@
 EXPERIMENT.split.list = {'WT10g_RNDE_02', 'WT10g_RNDE_03', 'WT10g_RNDE_04', 'WT10g_RNDE_05', 'WT10g_RNDE_10', 'WT10g_RNDE_25', 'WT10g_RNDE_50', ...
                          'TIP_RNDE_02', 'TIP_RNDE_03', 'TIP_RNDE_04', 'TIP_RNDE_05', 'TIP_RNDE_10', 'TIP_RNDE_25', 'TIP_RNDE_50', ...
                          'TIP12_RNDE_02', 'TIP12_RNDE_03', 'TIP12_RNDE_04', 'TIP12_RNDE_05', 'TIP12_RNDE_10', 'TIP12_RNDE_25', 'TIP12_RNDE_50', ...
-                         'WAPO_RNDE_02', 'WAPO_RNDE_03', 'WAPO_RNDE_04', 'WAPO_RNDE_05', 'WAPO_RNDE_10', 'WAPO_RNDE_25', 'WAPO_RNDE_50'};
+                         'WAPO_RNDE_02', 'WAPO_RNDE_03', 'WAPO_RNDE_04', 'WAPO_RNDE_05', 'WAPO_RNDE_10', 'WAPO_RNDE_25', 'WAPO_RNDE_50', ...
+                         'TIP12_NEMP_02', 'TIP12_NEMP_03', 'TIP12_NEMP_04', 'TIP12_NEMP_05'};
 EXPERIMENT.split.number = length(EXPERIMENT.split.list);
 
 % The total number of sample for each split
@@ -141,6 +142,36 @@ EXPERIMENT.split.TIP12_RNDE_50.name = 'TIPSTER disks 1-2 divided in 50 even size
 EXPERIMENT.split.TIP12_RNDE_50.corpus = 'TIP12';
 EXPERIMENT.split.TIP12_RNDE_50.shard = 50;
 EXPERIMENT.split.TIP12_RNDE_50.ratio = repmat(1/EXPERIMENT.split.TIP12_RNDE_50.shard, 1, EXPERIMENT.split.TIP12_RNDE_50.shard);
+
+
+
+
+EXPERIMENT.split.TIP12_NEMP_02.id = 'TIP12_NEMP_02'; 
+EXPERIMENT.split.TIP12_NEMP_02.name = 'TIPSTER disks 1-2 divided in 2 non-empty even size shards';
+EXPERIMENT.split.TIP12_NEMP_02.corpus = 'TIP12';
+EXPERIMENT.split.TIP12_NEMP_02.shard = 2;
+EXPERIMENT.split.TIP12_NEMP_02.ratio = repmat(1/EXPERIMENT.split.TIP12_NEMP_02.shard, 1, EXPERIMENT.split.TIP12_NEMP_02.shard);
+
+EXPERIMENT.split.TIP12_NEMP_03.id = 'TIP12_NEMP_03';
+EXPERIMENT.split.TIP12_NEMP_03.name = 'TIPSTER disks 1-2 divided in 3 non-empty even size shards';
+EXPERIMENT.split.TIP12_NEMP_03.corpus = 'TIP12';
+EXPERIMENT.split.TIP12_NEMP_03.shard = 3;
+EXPERIMENT.split.TIP12_NEMP_03.ratio = repmat(1/EXPERIMENT.split.TIP12_NEMP_03.shard, 1, EXPERIMENT.split.TIP12_NEMP_03.shard);
+
+EXPERIMENT.split.TIP12_NEMP_04.id = 'TIP12_NEMP_04';
+EXPERIMENT.split.TIP12_NEMP_04.name = 'TIPSTER disks 1-2 divided in 4 non-empty even size shards';
+EXPERIMENT.split.TIP12_NEMP_04.corpus = 'TIP12';
+EXPERIMENT.split.TIP12_NEMP_04.shard = 4;
+EXPERIMENT.split.TIP12_NEMP_04.ratio = repmat(1/EXPERIMENT.split.TIP12_NEMP_04.shard, 1, EXPERIMENT.split.TIP12_NEMP_04.shard);
+
+EXPERIMENT.split.TIP12_NEMP_05.id = 'TIP12_NEMP_05';
+EXPERIMENT.split.TIP12_NEMP_05.name = 'TIPSTER disks 1-2 divided in 5 non-empty even size shards';
+EXPERIMENT.split.TIP12_NEMP_05.corpus = 'TIP12';
+EXPERIMENT.split.TIP12_NEMP_05.shard = 5;
+EXPERIMENT.split.TIP12_NEMP_05.ratio = repmat(1/EXPERIMENT.split.TIP12_NEMP_05.shard, 1, EXPERIMENT.split.TIP12_NEMP_05.shard);
+
+
+
 
 
 

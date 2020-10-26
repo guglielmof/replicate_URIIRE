@@ -16,6 +16,8 @@ function [] = compute_bootstrap_effects(TAG, trackID, splitID, balanced, sstype,
 
 
     fprintf('  - model %s\n', TAG);
+    % repeat this "sample" time, to have a more precise statistics.
+    % smpl is not directly involved in the model.
     for smpl = startSample:endSample
       fprintf('    - sample %d\n', smpl);
       fprintf('      * load data\n');
@@ -38,7 +40,7 @@ function [] = compute_bootstrap_effects(TAG, trackID, splitID, balanced, sstype,
       serload2(EXPERIMENT.pattern.file.analysis.shard(trackID, splitID, anovaID), ...
           'WorkspaceVarNames', {'tbl', 'sts'}, ...
           'FileVarNames', {anovaTableID, anovaStsID});
-      %fprintf('      # balanced %s with value %3.2f\n', blc.type, blc.value);
+      
       % for each shard, load the shard measures
 
       measures = cell(1, EXPERIMENT.split.(splitID).shard);
@@ -104,12 +106,14 @@ function [] = compute_bootstrap_effects(TAG, trackID, splitID, balanced, sstype,
 
       bootstrapTable = table();
       for mb=1:M
-        %fprintf('\b\b\b\b\b%5d', mb);
         boot_measures = cell(1, EXPERIMENT.split.(splitID).shard);
         % for each shard, load the shard measures
         for shr = 1:EXPERIMENT.split.(splitID).shard
           [n_topics, n_systems] = size(estMeasures{shr});
+          %SAMPLE FROM THE RESIDUALS OF THE ANOVA MODEL
           perturbation = datasample(sts.resid, n_topics*n_systems);
+          
+          %RESHAPE THE MATRIX
           perturbation = reshape(perturbation, [n_topics, n_systems]);
           vNames = estMeasures{shr}.Properties.VariableNames;
           rNames = estMeasures{shr}.Properties.RowNames;
@@ -130,6 +134,8 @@ function [] = compute_bootstrap_effects(TAG, trackID, splitID, balanced, sstype,
         [tmpMean, tmpStd] = grpstats(data(:), factorA(:), {'mean', 'std'});
         newRow = array2table(tmpMean.',...
                              'VariableNames', tmpLabel);
+                         
+        %ADD THE NEW SAMPLED EFFECT SIZES TO THE ONES ALREADY COMPUTED
         bootstrapTable = [bootstrapTable; newRow];
       end
 
@@ -142,34 +148,6 @@ function [] = compute_bootstrap_effects(TAG, trackID, splitID, balanced, sstype,
                       'WorkspaceVarNames', {'bootstrapTable'}, ...
                       'FileVarNames', {bootsrapEffectsID});
 
-
-
-      %{
-      fprintf('\n\n');
-      fprintf('      * correcting for multiple comparision\n');
-      if strcmp(direction, 'bi')
-         [cutoff, ssdcouples, pvalMatrix, k] = BHcorrection_bidirectional(sortedSystems, bootstrapTable, EXPERIMENT.analysis.alpha.threshold, 1);
-      else
-         [cutoff, ssdcouples, pvalMatrix, k] = BHcorrection(sortedSystems, bootstrapTable, EXPERIMENT.analysis.alpha.threshold, 1);
-      end
-      fprintf('      * statistically significantly different couples of systems: %d\n',ssdcouples);
-
-      ci = [];
-      for i =1:length(me.factorA.label)
-          sortedboot = sort(bootstrapTable{:,me.factorA.label{i}});
-          %cisize = sortedboot(end-cutoff) - sortedboot(cutoff+1);
-          %cisize = cisize/2;
-          %infci = me.factorA.mean(i) - cisize;
-          %supci = me.factorA.mean(i) + cisize;
-          %ci = [ci; [infci, supci]];
-          %infci = cast(M*cutoff+1, 'int32');
-          %supci = cast(M-M*cutoff, 'int32');
-          infci = cast(cutoff, 'int32');
-          supci = cast(M - cutoff, 'int32');
-
-          ci = [ci; [sortedboot(infci) sortedboot(supci) me.factorA.mean(i)]];
-      end
-      %}
     end
   end
 end

@@ -117,6 +117,13 @@ function [] = split_pool(trackID, splitID)
                 % find which rows (documents) have to be kept
                 keep = ismember(topic.Document, shard);
                 
+                relevance = shardPool{t, :}{1}{:, 2};
+                rel_idx = (relevance=='Relevant');
+                rel_docs =  shardPool{t, :}{1}{rel_idx, 1};
+                if contains('NEMP', splitID) && ~any(ismember(rel_docs, shard))
+                    fprintf("ERROR: REQUESTED NEMP SHARD, BUT RELEVANTS NOT FOUND");
+                end
+                
                 if any(keep)
                     shardPool{t, 1} = {topic(keep, :)};
                 else
